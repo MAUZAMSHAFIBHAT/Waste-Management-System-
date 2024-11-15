@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/signup_dashboard.css' %}">
+</head>
+<body>
+    <div class="signup-dashboard">
+        <h1>Choose Signup </h1>
+        <div class="signup-options">
+            <a href="/signup/user" class="signup-btn user-btn">User Signup</a>
+
+            <a href="/signup/admin" class="signup-btn admin-btn">Admin Signup</a>
+        </div>
+    </div>
+    <script>
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent the default anchor link behavior
+            alert(`You clicked on ${this.innerText}`);
+        });
+    });
+</script>
+</body>
+</html>

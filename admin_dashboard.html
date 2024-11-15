@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">MyDashboard</div>
+            <nav class="nav">
+                <a href="#">Dashboard</a>
+                <a href="#">User Management</a>
+                <a href="#">Reports</a>
+                <a href="#">Settings</a>
+                <a href="#">Support</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header Section -->
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="profile">
+                    <span>Admin</span>
+                    <button>Logout</button>
+                </div>
+            </header>
+
+            <!-- Overview Section -->
+            <section class="overview">
+                <div class="card">Total Users: 1200</div>
+                <div class="card">Active Users: 950</div>
+                <div class="card">Pending Requests: 45</div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section class="analytics">
+                <h2>Analytics</h2>
+                <canvas id="chart"></canvas>
+            </section>
+        </main>
+    </div>
+
+      <!-- JavaScript for Chart -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+          document.addEventListener('DOMContentLoaded', () => {
+              const ctx = document.getElementById('chart').getContext('2d');
+              new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                      labels: ['January', 'February', 'March', 'April', 'May'],
+                      datasets: [{
+                          label: 'User Engagement',
+                          data: [65, 59, 80, 81, 56],
+                          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                          borderColor: 'rgba(75, 192, 192, 1)',
+                          borderWidth: 1
+                      }]
+                  },
+                  options: {
+                      scales: {
+                          y: { beginAtZero: true }
+                      }
+                  }
+              });
+          });
+      </script>
+</body>
+</html>

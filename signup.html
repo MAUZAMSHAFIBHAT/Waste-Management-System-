@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Signup</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="signup-form">
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="text" placeholder="Address" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                
+                <button type="submit">Sign up</button>
+                <p>Already have an account? <a href="{% url 'login_view' %}">Log In</a></p>
+            </form>
+        </div>
+        <div class="signup-banner">
+            <h1>Join with us</h1>
+        </div>
+    </div>
+</body>
+</html>

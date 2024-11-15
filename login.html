@@ -1,0 +1,46 @@
+<!-- templates/login.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <!-- Optional: Include Bootstrap for better styling -->
+ 
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-section text-center">
+            <h1>Welcome</h1>
+        </div>
+        <div class="login-form">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+            <form method="POST" action="{% url 'login_view' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" name="email" placeholder="Email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+                <div class="links">
+                    <a href="{% url 'password_reset' %}">Forgot password?</a>
+                    <p>Don't have an account? <a href="{% url 'signup_dashboard' %}">Sign up here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Optional: Include Bootstrap JS (if needed) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

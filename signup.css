@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+}
+
+.container {
+    display: flex;
+    width: 900px; /* Increased width for more space */
+    height: 500px; /* Increased height for better layout */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
+    overflow: hidden;
+}
+
+.signup-form {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.signup-form input {
+    padding: 14px; /* Increased padding for better touch targets */
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+}
+
+.signup-form button {
+    padding: 14px; /* Increased padding */
+    font-size: 1rem;
+    color: #fff;
+    background-color: #48a382;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-form button:hover {
+    background-color: #3a8469;
+}
+
+.signup-form p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.signup-form p a {
+    color: #48a382;
+    text-decoration: none;
+}
+
+.signup-form p a:hover {
+    text-decoration: underline;
+}
+
+/* Banner section with curved effect */
+.signup-banner {
+    width: 50%;
+    background-color: #48a382;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.signup-banner h1 {
+    font-size: 2.5rem; /* Increased font size for prominence */
+    font-weight: bold;
+    z-index: 1;
+}
+
+.signup-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100px; /* Offset the circle to the left */
+    width: 400px;
+    height: 400px;
+    background-color: #48a382;
+    border-radius: 50%;
+    z-index: 0;
+}

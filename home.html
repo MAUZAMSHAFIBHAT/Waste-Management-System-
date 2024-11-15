@@ -1,0 +1,152 @@
+<!-- templates/home.html -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pristine Waste Management</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">Info</div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Services</a>
+                <a href="#">We Treat</a>
+                <a href="#">Our Profile</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact Us</a>
+            </nav>
+            <div class="auth">
+                <a href="{% url 'login_view' %}">Log In</a> | 
+                <a href="{% url 'signup_dashboard' %}">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Reliable and Efficient Waste Management Services</h1>
+        <a href="#" class="btn-enquire">Enquire Now</a>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service-box">
+                <img src="{% static 'images/waste_disposal.jpg' %}" alt="Waste Disposal">
+                <h3>Waste Disposal</h3>
+                <p>We have developed strong relationships with disposal facilities, landfills, and incinerators to manage waste responsibly and sustainably.</p>
+                <a href="#" class="btn-enquire">Enquire Now</a>
+            </div>
+            <div class="service-box">
+                <img src="{% static 'images/waste_treatment.jpg' %}" alt="Waste Treatment">
+                <h3>Waste Treatment</h3>
+                <p>We use biological, chemical, or mechanical methods to remove pollutants and ensure effective waste treatment.</p>
+                <a href="#" class="btn-enquire">Enquire Now</a>
+            </div>
+            <div class="service-box">
+                <img src="{% static 'images/waste_recycling.jpg' %}" alt="Waste Recycling">
+                <h3>Waste Recycling</h3>
+                <p>Our recycling services transform waste materials into useful products, reducing environmental impact and saving energy.</p>
+                <a href="#" class="btn-enquire">Enquire Now</a>
+            </div>
+            <div class="service-box">
+                <img src="{% static 'images/waste_transportation.jpg' %}" alt="Waste Collection & Transportation">
+                <h3>Waste Collection & Transportation</h3>
+                <p>With our reliable transportation network, we ensure safe and efficient waste collection and disposal across various regions.</p>
+                <a href="#" class="btn-enquire">Enquire Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- We Treat Section -->
+    <section class="we-treat">
+        <h2>We Treat</h2>
+        <div class="treat-container">
+            <div class="treat-box">
+                <img src="{% static 'images/plastic_waste.jpg' %}" alt="Plastic Wastes">
+                <p>Plastic Wastes</p>
+            </div>
+            <div class="treat-box">
+                <img src="{% static 'images/e_waste.jpg' %}" alt="E-Wastes">
+                <p>E-Wastes</p>
+            </div>
+            <div class="treat-box">
+                <img src="{% static 'images/glass_waste.jpg' %}" alt="Glass Wastes">
+                <p>Glass Wastes</p>
+            </div>
+            <div class="treat-box">
+                <img src="{% static 'images/metallic_waste.jpg' %}" alt="Metallic Wastes">
+                <p>Metallic Wastes</p>
+            </div>
+            <div class="treat-box">
+                <img src="{% static 'images/Organic_waste.jpg' %}" alt="Organic Wastes">
+                <p>Organic Wastes</p>
+            </div>
+            <div class="treat-box">
+                <img src="{% static 'images/medical_waste.jpg' %}" alt="Medical Wastes">
+                <p>Medical Wastes</p>
+            </div>
+        </div>
+        <div class="additional-image">
+            <img src="{% static 'images/pic.jpg' %}" alt="Additional Description" class="full-width-image">
+        </div>
+        <div class="additional-image">
+            <img src="{% static 'images/Gallery.jpg' %}" alt="Additional Description" class="full-width-image">
+        </div>
+    </section>
+
+     <!-- Contact Us Section -->
+     <section class="contact-container">
+        <h1>Contact Us</h1>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="icon">&#x1F4CD;</i>
+                    <div>
+                        <h3>Our Office Address</h3>
+                        <p>Hyderbad</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="icon">&#x2709;&#xFE0F;</i>
+                    <div>
+                        <h3>General Enquiries</h3>
+                        <p>info@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="icon">&#x1F4DE;</i>
+                    <div>
+                        <h3>Call Us</h3>
+                        <p>+91-8888888888</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="icon">&#x1F551;</i>
+                    <div>
+                        <h3>Our Timing</h3>
+                        <p>Mon - Sun : 10:00 AM - 07:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Your Contact No." required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

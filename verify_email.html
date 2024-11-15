@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+    <link rel="stylesheet" href="{% static 'css/verify_email.css' %}">
+</head>
+<body>
+    <div class="verification-container">
+        <h2>Email Verification</h2>
+        <p>Enter the 6-digit code sent to your email</p>
+        <form method="POST" action="{% url 'verify_code' %}">
+            {% csrf_token %}
+            <div class="code-inputs">
+                <input type="text" name="digit1" maxlength="1" required autofocus>
+                <input type="text" name="digit2" maxlength="1" required>
+                <input type="text" name="digit3" maxlength="1" required>
+                <input type="text" name="digit4" maxlength="1" required>
+                <input type="text" name="digit5" maxlength="1" required>
+                <input type="text" name="digit6" maxlength="1" required>
+            </div>
+            <button type="submit">Verify</button>
+        </form>
+        <p class="resend-link">Didn't receive the code? <a href="{% url 'resend_code' %}">Resend</a></p>
+    </div>
+
+    <!-- JavaScript for automatically moving focus to the next input -->
+    <script>
+        document.querySelectorAll('.code-inputs input').forEach((input, index, inputs) => {
+            input.addEventListener('input', () => {
+                // Move to next input if current input has a single character and it's not the last input
+                if (input.value.length === 1 && index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+                // If user presses backspace and input is empty, move to the previous input
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && input.value === '' && index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/user_dashboard.css' %}"> <!-- Link to CSS file -->
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>User Dashboard</h2>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <li><a href="#notifications">Notifications</a></li>
+                    <li><a href="#messages">Messages</a></li>
+                    <li><a href="#reports">Reports</a></li>
+                    <li><a href="#logout">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Welcome, User!</h1>
+                <p>Here's your dashboard overview.</p>
+            </header>
+
+            <section id="profile">
+                <h2>Profile Information</h2>
+                <p>Manage your profile details here.</p>
+            </section>
+
+            <section id="settings">
+                <h2>Settings</h2>
+                <p>Customize your preferences.</p>
+            </section>
+
+            <section id="notifications">
+                <h2>Notifications</h2>
+                <p>Check your notifications here.</p>
+            </section>
+
+            <section id="messages">
+                <h2>Messages</h2>
+                <p>View and manage your messages.</p>
+            </section>
+
+            <section id="reports">
+                <h2>Reports</h2>
+                <p>Access your reports and statistics.</p>
+            </section>
+        </main>
+    </div>
+    
+    <script>
+        // JavaScript code embedded directly in the HTML file
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent the default anchor link behavior
+                alert(`You clicked on ${this.innerText}`);
+            });
+        });
+    </script>
+</body>
+</html>
